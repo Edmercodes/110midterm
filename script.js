@@ -21,7 +21,17 @@ document.addEventListener('DOMContentLoaded', function() {
             img.src = artwork.imageUrl;
             img.alt = artwork.title;
 
+            // Add "Add to Cart" button
+            const addToCartButton = document.createElement('button');
+            addToCartButton.textContent = 'Add to Cart';
+            addToCartButton.classList.add('btn-add-to-cart');
+            addToCartButton.addEventListener('click', () => {
+                // Add your logic for adding the artwork to cart here
+                alert(`Added ${artwork.title} to cart`);
+            });
+
             artworkCard.appendChild(img);
+            artworkCard.appendChild(addToCartButton);
             artworksContainer.appendChild(artworkCard);
         });
     }
